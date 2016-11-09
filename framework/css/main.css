@@ -1,0 +1,9 @@
+body {
+  font-family: Futura;
+}
+
+@media only screen and (max-width: 300px) {
+  p {
+    background-color: blue;
+  }
+}
