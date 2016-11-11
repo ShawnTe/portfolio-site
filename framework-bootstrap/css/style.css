@@ -1,10 +1,32 @@
+/* Color palette
+dark gray #323233
+light blue #95bcc1
+dusty dark rose #824c66
+gunmetal gray #54627a
+orange #cc7347
+*/
+
+html {
+  background: url(../images/turquoise.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
 body {
-  font-family: 'Walter Turncoat', cursive;
+  /*font-family: 'Walter Turncoat', cursive;*/
+  font-family: 'Proza Libre', sans-serif;
+  color: #824c66;
+  background-color: transparent;
+
   }
 
 .text-Lato {
-  font-family: 'Lato', sans-serif;
-  font-weight: 100;
+  /*font-family: 'Lato', sans-serif;*/
+  font-family: 'Proza Libre', sans-serif;
+
+  /*font-weight: 100;*/
 }
 
 .text-super {
