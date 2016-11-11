@@ -1,0 +1,23 @@
+body {
+  font-family: 'Walter Turncoat', cursive;
+  }
+
+.text-Lato {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}
+
+.text-super {
+  font-size: 3em;
+}
+
+.text-smaller {
+  font-size: medium;
+}
+
+.flex {
+  /*width: 33.33%;*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
