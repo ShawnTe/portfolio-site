@@ -4,10 +4,16 @@ light blue #95bcc1
 dusty dark rose #824c66
 gunmetal gray #54627a
 orange #cc7347
+
+turq 3399CC
+bright orange CC3300
+green 009900
+light blue  CCFFFF
+gray 495252
 */
 
 html {
-  background: url(../images/turquoise.jpg) no-repeat center center fixed;
+  background: url(../images/turquoise.jpg) no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -17,10 +23,20 @@ html {
 body {
   /*font-family: 'Walter Turncoat', cursive;*/
   font-family: 'Proza Libre', sans-serif;
-  color: #824c66;
+  color: #CC3300;
   background-color: transparent;
-
   }
+
+h2 {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  font-size: 4em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .text-Lato {
   /*font-family: 'Lato', sans-serif;*/
@@ -37,9 +53,64 @@ body {
   font-size: medium;
 }
 
-.flex {
+.flex-col {
   /*width: 33.33%;*/
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;;
+}
+
+
+section {
+  margin-top: 300px;
+  padding-bottom: 500px;
+  height: 400px;
+}
+
+#connect {
+  background-color: #CCFFFF;
+  opacity: 0.7;
+  color: #3399CC;
+}
+
+#coding {
+  background-color: #495252;
+  color: #CCFFFF;
+  opacity: 0.7;
+
+}
+
+#other-goods {
+
+}
+
+.circle {
+	border-radius: 30%;
+	width: 250px;
+	height: 200px;
+  background-color: #3399CC;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h4.lobster {
+  font-family: 'Lobster Two', cursive;
+  font-size: 3em;
+  margin-bottom: 0px;
+  padding: 0px;
+  /*line-height: 3em;*/
+}
+
+.lt-blue{
+  color: #CCFFFF;
+}
+
+.hand-cursor {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.center {
+  margin: 0 auto;
 }
