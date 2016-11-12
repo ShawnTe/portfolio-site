@@ -60,6 +60,11 @@ a {
   justify-content: flex-end;;
 }
 
+.flex-row {
+  display: flex;
+  justify-content: space-around;
+}
+
 
 section {
   margin-top: 300px;
@@ -69,21 +74,47 @@ section {
 
 #connect {
   background-color: #CCFFFF;
-  opacity: 0.7;
+  opacity: 0.8;
   color: #3399CC;
 }
 
 #coding {
   background-color: #495252;
   color: #CCFFFF;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 #other-goods {
   background-color: #CCFFFF;
-  opacity: 0.7;
+  opacity: 0.8;
   color: #3399CC;
   padding-bottom: 800px;
+}
+
+.project-logo {
+  width: 200px;
+  height: 200px;
+  background-color: #1a1F71;
+}
+
+#gamegyft {
+  background-color: #1a1F71;
+  color: #FAAA13;
+}
+
+#book-of-becoming {
+  background-color: #851549;
+  color: #39cccc;
+}
+
+#guardian {
+  background-color: #;
+  color: #;
+}
+
+#i-have-to-take-this {
+  background-color: #;
+  color: #;
 }
 
 .background {
