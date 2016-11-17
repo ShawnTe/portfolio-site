@@ -160,7 +160,15 @@ section {
   height: 200px;
   background-color: #1a1F71;
 }
-
+.phoney-logo {
+  margin: 20px auto 0 auto;
+  overflow: hidden;
+  background: transparent url("../images/phoney-logo.png") top center no-repeat;
+  background-size: 200px 47px;
+  width: 200px;
+  height: 47px;
+  display: block;
+}
 #gamegyft {
   font-family: 'Orbitron', serif;
   background-color: #1a1F71;
@@ -173,11 +181,12 @@ section {
   color: #39cccc;
 }
 #guardian {
-  background-color: #;
-  color: #;
+  background-color: #34495e;
+  font-family: Futura;
+  color: #fff;
 }
 #i-have-to-take-this {
-  background-color: #;
+  background-color: #fff;
   color: #;
 }
 .background {
