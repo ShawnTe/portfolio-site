@@ -91,7 +91,7 @@ body {
 
 h2 {
   margin-top: 70px;
-  margin-bottom: 70px;
+  /*margin-bottom: 70px;*/
   font-size: 4em;
 }
 
@@ -118,12 +118,14 @@ a {
   display: flex;
   justify-content: space-around;
 }
-
 section {
   margin-top: 300px;
   padding-top: 80px;
   padding-bottom: 600px;
   height: 600px;
+}
+.section-header {
+  padding-bottom: 60px;
 }
 
 #connect {
