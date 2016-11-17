@@ -162,25 +162,24 @@ section {
 }
 
 #gamegyft {
+  font-family: 'Orbitron', serif;
   background-color: #1a1F71;
   color: #FAAA13;
 }
 
 #book-of-becoming {
+  font-family: Futura;
   background-color: #851549;
   color: #39cccc;
 }
-
 #guardian {
   background-color: #;
   color: #;
 }
-
 #i-have-to-take-this {
   background-color: #;
   color: #;
 }
-
 .background {
   opacity: 1.0;
   border:5px solid #fff;
