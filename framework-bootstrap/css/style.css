@@ -97,9 +97,9 @@ body {
   }
 
 h2 {
-  margin-top: 70px;
+  margin-top: 0px;
   /*margin-bottom: 70px;*/
-  font-size: 4em;
+  font-size: 5em;
 }
 
 a {
@@ -120,7 +120,10 @@ a {
   flex-direction: column;
   justify-content: center;
 }
-
+p.sub-script {
+  font-style: italic;
+  font-size: small;
+}
 /*.flex-row {
   display: flex;
   flex-direction: row;
@@ -132,6 +135,9 @@ section {
   padding-bottom: 600px;
   height: 600px;
 }
+button {
+  width: 100px;
+}
 .section-header {
   padding-bottom: 60px;
 }
@@ -140,13 +146,13 @@ section {
 }
 #connect {
   background: rgb(54, 25, 25); /* Fall-back for browsers that don't support rgba */
-  background: rgba(54, 25, 25, .5);
+  background: rgba(54, 25, 25, .8);
   color: #CCFFFF;
 }
 
 #coding {
   background: rgb(54, 25, 25); /* Fall-back for browsers that don't support rgba */
-  background: rgba(54, 25, 25, .5);
+  background: rgba(54, 25, 25, .8);
   color: #CCFFFF;
 }
 
@@ -165,7 +171,6 @@ section {
   padding: 30px 0px 30px 0px;
   height: 100px;
 }
-
 .project-logo {
   width: 200px;
   height: 200px;
@@ -207,40 +212,34 @@ section {
   border-radius: 10px;
   background-color: #fff;
 }
-
 .circle {
 	border-radius: 50%;
-	width: 200px;
-	height: 200px;
+	width: 80px;
+	height: 80px;
   background-color: #3399CC;
   /*display: flex;
   flex-direction: column;
   justify-content: center;*/
 }
-
 h4.lobster {
   font-family: 'Lobster Two', cursive;
   font-size: 3em;
   /*margin-bottom: 0px;
   padding: 0px;*/
 }
-
 .white {
   background-color: #fff;
 }
 .lt-blue{
   color: #CCFFFF;
 }
-
 .hand-cursor {
   cursor: pointer;
   cursor: hand;
 }
-
 .center {
   margin: 0 auto;
 }
-
 .smaller-image {
   max-width: 150px;
   max-height: 150px;
