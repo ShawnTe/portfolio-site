@@ -15,7 +15,7 @@ html {
 }
 
 body	{
-  background:url(../images/bg-hummingbird.jpg) top right no-repeat;
+  background:url(../images/bg-reflection.jpg) top right no-repeat;
   background-attachment:fixed;
   width: 100%;
 }
@@ -62,7 +62,7 @@ header nav a {
   line-height: 150px;
   margin-left: 20px;
   color: #CCFFFF;
-  font-size: 16px;
+  font-size: 1.5em;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -ms-transition: all 0.3s;
@@ -83,6 +83,7 @@ header.smaller h1#logo {
 }
 header.smaller nav a {
     line-height: 75px;
+    font-size: 1em;
 }
 main {
   /*padding: 110px 50px 50px;*/
@@ -93,31 +94,49 @@ main {
 }*/
 body {
   /*font-family: 'Walter Turncoat', cursive;*/
-  font-family: 'Proza Libre', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
   color: #CC3300;
   background-color: transparent;
   padding-top: 200px;
   }
-
 h2 {
   margin-top: 0px;
-  /*margin-bottom: 70px;*/
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
   font-size: 4em;
+  line-height: 150%;
 }
-
+p.larger {
+  font-size: 2em;
+}
 a {
   text-decoration: none;
   color: inherit;
 }
-
-.text-Lato {
-  font-family: 'Proza Libre', sans-serif;
+h4.subheader {
+  font-weight: 100;
+  padding-bottom: 20px;
 }
+/*.text-Lato {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+}*/
+.top-space {
+  margin-top: 40px;
+}
+.btn-info:hover {
+  background-color: #CCFFFF;
+  border-color: #CCCFFF;
+}
+.btn-info {
+  background-color: #3399CC;
+  border-color: #3399CC;
 
+}
 .text-smaller {
   font-size: medium;
 }
-
 .flex-col {
   display: flex;
   flex-direction: column;
@@ -136,7 +155,7 @@ div.row {
   width: 100%;
 }
 #spacer {
-  height: 300px;
+  height: 400px;
 }
 section {
   /*margin-top: 300px;
@@ -152,7 +171,7 @@ section {
 .section {
   position:relative;
   z-index:1;
-  height:1000px;
+  height:1200px;
   width:100%;
   background-attachment:fixed;    /* this keeps the background in place */
   background-size:100% 100%;
@@ -173,24 +192,30 @@ section {
     background-size: cover;
 }
 .section#s2 {
-    background-image: url("../images/bg-lantern.jpg");
+    background-image: url("../images/bg-fish.jpg");
     background-size: cover;
-
 }
 .section#s3 {
+    background-image: url("../images/bg-incense.jpg");
+    background-size: cover;
+}
+.section#s4 {
+    background-image: url("../images/bg-fantastic-creature.jpg");
+    background-size: cover;
+  }
+.section#s5 {
     background-image: url("../images/bg-heuchera.jpg");
     background-size: cover;
-
-}
+  }
 button {
   width: 100px;
 }
 .section-header {
   padding-bottom: 20px;
 }
-.green {
+/*.green {
   color: #009900;
-}
+}*/
 #connect {
 }
 
@@ -202,7 +227,7 @@ button {
 
 #footer {
   background-color: #323233;
-  color: #3399CC;
+  color: #CCFFFF;
   /*margin-top: 300px;*/
   /*padding-top: 50px;*/
   padding: 30px 0px 30px 0px;
@@ -222,24 +247,35 @@ button {
   height: 30px;
   display: block;
 }
+.first-letter {
+  font-family: 'Lobster Two', cursive;
+  font-size: 50px;
+}
+.quote {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.right {
+  float: right;
+}
 #gamegyft {
   font-family: 'Orbitron', serif;
-  background-color: #1a1F71;
+  /*background-color: #1a1F71;*/
   color: #FAAA13;
 }
 
 #book-of-becoming {
   font-family: Futura;
-  background-color: #851549;
+  /*background-color: #851549;*/
   color: #39cccc;
 }
 #guardian {
-  background-color: #34495e;
+  /*background-color: #34495e;*/
   font-family: Futura;
   color: #fff;
 }
 #i-have-to-take-this {
-  background-color: #fff;
+  /*background-color: #fff;*/
   color: #FAAA13;
   /*line-height: 100px;*/
 }
@@ -253,19 +289,27 @@ button {
 	border-radius: 50%;
 	width: 80px;
 	height: 80px;
-  background-color: #3399CC;
+  background-color: #891e53;
   /*display: flex;
   flex-direction: column;
   justify-content: center;*/
+}
+.large-white {
+  background-color: #fff;
+  padding-top: 20px;
+  width: 80%;
+  height: 90%;
+  border-radius: 2vw;
+  color: rgb(54, 25, 25);
+}
+.white {
+  background-color: #fff;
 }
 h4.lobster {
   font-family: 'Lobster Two', cursive;
   font-size: 3em;
   /*margin-bottom: 0px;
   padding: 0px;*/
-}
-.white {
-  background-color: #fff;
 }
 .lt-blue{
   color: #CCFFFF;
@@ -319,13 +363,38 @@ h4.lobster {
     }
     header.smaller nav a {
         line-height: 35px;
+        font-weight: 300;
     }
-}
+    h2 {
+      font-weight: 300;
+    }
+    h3 {
+      font-size: 2em;
+    }
+    p {
+      font-size: 5em;
+      font-weight: 300;
+    }
 
-.sample {
-  /*width: 90%;*/
-  height: 200px;
-  /*border: 5px;*/
-  background-color: blue;
 
+    .section#s1 {
+        background-image: url("../images/bg-converse-800-600.jpg");
+        background-size: cover;
+    }
+    .section#s2 {
+        background-image: url("../images/bg-fish-800-600.jpg");
+        background-size: cover;
+    }
+    .section#s3 {
+        background-image: url("../images/bg-incense-800-600.jpg");
+        background-size: cover;
+    }
+    .section#s5 {
+        background-image: url("../images/bg-fantastic-creature-800-600.jpg");
+        background-size: cover;
+      }
+    .section#s4 {
+        background-image: url("../images/bg-heuchera-800-600.jpg");
+        background-size: cover;
+      }
 }
