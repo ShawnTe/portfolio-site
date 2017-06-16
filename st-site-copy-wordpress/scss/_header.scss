@@ -1,0 +1,43 @@
+.masthead {
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: $light-gray;
+  h1 {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    font-weight: 300;
+    font-size: 3.1em;
+    color: $dark-gray;
+    line-height: 1.25;
+  }
+}
+
+.nav {
+  padding: 33px 150px;
+  h1 {
+    color: $med-gray;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-size: 1em;
+    display: inline;
+
+  }
+  a {
+    text-decoration: none;
+  }
+  @include linx($med-gray, $med-gray, $med-gray, $med-gray);
+}
+
+.navbar {
+  float: right;
+  display: inline;
+  // padding: 30px 0;
+  a {
+    // display: inline;
+    margin: 0 7px;
+
+  }
+  @include linx($dark-gray, $med-gray, $dark-gray, $dark-gray);
+}

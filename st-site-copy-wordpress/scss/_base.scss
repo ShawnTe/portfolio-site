@@ -1,0 +1,15 @@
+$dark-gray : #263238;
+$med-gray : #546e7a;
+$light-gray : #dbe2e5;
+
+
+
+
+body {
+  color: $med-gray;
+  font-family: 'Karla', sans-serif;
+  font-size: 1.1em;
+  strong {
+    color: $dark-gray;
+  }
+}

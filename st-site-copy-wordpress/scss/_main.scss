@@ -1,0 +1,13 @@
+.main {
+  max-width: 800px;
+  margin: auto;
+  padding: 3%;
+  .left-indent-medium {
+    padding-left: 30px;
+  }
+  .left-indent-small {
+    padding-left: 10px;
+    margin: 0;
+    line-height: 1.5em;
+  }
+}
