@@ -2293,6 +2293,7 @@
 			cursor: default;
 			list-style: none;
 			padding-left: 0;
+			text-align: center;
 		}
 
 			ul.icons li {
@@ -3679,6 +3680,7 @@
 
 			#contact > .inner > .split {
 				padding: 0;
+				padding-top: 18%;
 			}
 
 				#contact > .inner > .split > * {
