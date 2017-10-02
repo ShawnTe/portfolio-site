@@ -2305,6 +2305,13 @@
 					padding-right: 0;
 				}
 
+		ul.skills {
+
+		}
+
+			ul.skills li {
+				list-style: none;
+			}
 			@media screen and (max-width: 736px) {
 
 				ul.icons li {
