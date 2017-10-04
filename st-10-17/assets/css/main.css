@@ -3819,7 +3819,7 @@
 
 /* Menu */
 
-	#menu {
+	#menu, #details {
 		-moz-transition: -moz-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
 		-webkit-transition: -webkit-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
 		-ms-transition: -ms-transform 0.35s ease, opacity 0.35s ease, visibility 0.35s;
@@ -3854,7 +3854,7 @@
 		z-index: 10002;
 	}
 
-		#menu .inner {
+		#menu .inner, #details .inner {
 			-moz-transition: -moz-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
 			-webkit-transition: -webkit-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
 			-ms-transition: -ms-transform 0.35s ease-out, opacity 0.35s ease, visibility 0.35s;
@@ -3873,28 +3873,28 @@
 			width: 18em;
 		}
 
-			#menu .inner > :first-child {
+			#menu .inner, #details .inner > :first-child {
 				margin-top: 2em;
 			}
 
-			#menu .inner > :last-child {
+			#menu .inner, #details .inner > :last-child {
 				margin-bottom: 3em;
 			}
 
-		#menu ul {
+		#menu ul, #details ul {
 			margin: 0 0 1em 0;
 		}
 
-			#menu ul.links {
+			#menu ul.links, #details ul.links {
 				list-style: none;
 				padding: 0;
 			}
 
-				#menu ul.links > li {
+				#menu ul.links, #details ul.links > li {
 					padding: 0;
 				}
 
-					#menu ul.links > li > a:not(.button) {
+					#menu ul.links, #details ul.links > li > a:not(.button) {
 						border: 0;
 						border-top: solid 1px rgba(212, 212, 255, 0.1);
 						display: block;
@@ -3906,16 +3906,16 @@
 						text-transform: uppercase;
 					}
 
-					#menu ul.links > li > .button {
+					#menu ul.links, #details ul.links > li > .button {
 						display: block;
 						margin: 0.5em 0 0 0;
 					}
 
-					#menu ul.links > li:first-child > a:not(.button) {
+					#menu ul.links, #details ul.links > li:first-child > a:not(.button) {
 						border-top: 0 !important;
 					}
 
-		#menu .close {
+		#menu .close, #details .close {
 			-moz-transition: color 0.2s ease-in-out;
 			-webkit-transition: color 0.2s ease-in-out;
 			-ms-transition: color 0.2s ease-in-out;
@@ -3938,7 +3938,7 @@
 			width: 8em;
 		}
 
-			#menu .close:before, #menu .close:after {
+			#menu .close:before, #menu .close:after, #details .close:before, #details .close:after {
 				-moz-transition: opacity 0.2s ease-in-out;
 				-webkit-transition: opacity 0.2s ease-in-out;
 				-ms-transition: opacity 0.2s ease-in-out;
@@ -3954,31 +3954,31 @@
 				width: 4em;
 			}
 
-			#menu .close:before {
+			#menu .close:before, #details .close:before {
 				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %23ffffff%3B stroke-width: 2%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='20' y2='20' /%3E%3Cline x1='20' y1='0' x2='0' y2='20' /%3E%3C/svg%3E");
 			}
 
-			#menu .close:after {
+			#menu .close:after, #details .close:after {
 				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px' viewBox='0 0 20 20' zoomAndPan='disable'%3E%3Cstyle%3Eline %7B stroke: %239bf1ff%3B stroke-width: 2%3B %7D%3C/style%3E%3Cline x1='0' y1='0' x2='20' y2='20' /%3E%3Cline x1='20' y1='0' x2='0' y2='20' /%3E%3C/svg%3E");
 				opacity: 0;
 			}
 
-			#menu .close:hover:after, #menu .close:active:after {
+			#menu .close:hover:after, #menu .close:active:after, #details .close:hover:after, #details .close:active:after {
 				opacity: 1;
 			}
 
-	body.is-ie #menu {
+	body.is-ie #menu, body.is-ie #details {
 		background: rgba(42, 47, 74, 0.975);
 	}
 
-	body.is-menu-visible #wrapper {
+	body.is-menu-visible #wrapper, body.are-details-visible #wrapper {
 		-moz-filter: blur(0.5em);
 		-webkit-filter: blur(0.5em);
 		-ms-filter: blur(0.5em);
 		filter: blur(0.5em);
 	}
 
-	body.is-menu-visible #menu {
+	body.is-menu-visible #menu, body.are-details-visible #details {
 		-moz-pointer-events: auto;
 		-webkit-pointer-events: auto;
 		-ms-pointer-events: auto;
@@ -3987,7 +3987,7 @@
 		visibility: visible;
 	}
 
-		body.is-menu-visible #menu .inner {
+		body.is-menu-visible #menu .inner, body.are-details-visible #details .inner {
 			-moz-transform: none;
 			-webkit-transform: none;
 			-ms-transform: none;

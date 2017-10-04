@@ -96,7 +96,8 @@
 			$body = $('body'),
 			$wrapper = $('#wrapper'),
 			$header = $('#header'),
-			$banner = $('#banner');
+			$banner = $('#banner'),
+			$main = $('#main');
 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
@@ -149,6 +150,7 @@
 				// Image.
 
 					// Set image.
+						// $this.css('background-image', 'url("images/blue-monster.jpg")');
 						$this.css('background-image', 'url(' + $img.attr('src') + ')');
 
 					// Set position.
@@ -167,30 +169,6 @@
 							.appendTo($this);
 
 						$link = $link.add($x);
-
-						$link.on('click', function(event) {
-
-							var href = $link.attr('href');
-
-							// Prevent default.
-								event.stopPropagation();
-								event.preventDefault();
-
-							// Start transitioning.
-								$this.addClass('is-transitioning');
-								$wrapper.addClass('is-transitioning');
-
-							// Redirect.
-								window.setTimeout(function() {
-
-									if ($link.attr('target') == '_blank')
-										window.open(href);
-									else
-										location.href = href;
-
-								}, 500);
-
-						});
 
 					}
 
@@ -246,9 +224,58 @@
 
 			});
 
+		// Details.
+			var $details = $('#details'),
+				$detailsInner;    // how is it grabbing this?
+
+			console.log('$details', $details);
+
+			$details.wrapInner('<div class="inner"></div>');
+			$detailsInner = $details.children('.inner');
+			$details._locked = false;
+
+			$details._lock = function() {
+
+				if ($details._locked)
+					return false;
+
+				$details._locked = true;
+
+				window.setTimeout(function() {
+					$details._locked = false;
+				}, 350);
+
+				return true;
+
+			};
+
+			$details._show = function() {
+
+				if ($details._lock())
+					$body.addClass('are-details-visible');
+
+			};
+
+			$details._hide = function() {
+
+				if ($details._lock())
+					$body.removeClass('are-details-visible');
+
+			};
+
+			$details._toggle = function() {
+
+				if ($details._lock())
+					$body.toggleClass('are-details-visible');
+
+			};
+
+
 		// Menu.
 			var $menu = $('#menu'),
 				$menuInner;
+
+			console.log('$menu', $menu);
 
 			$menu.wrapInner('<div class="inner"></div>');
 			$menuInner = $menu.children('.inner');
@@ -290,6 +317,28 @@
 
 			};
 
+			$detailsInner
+				.on('click', function(event) {
+					event.stopPropagation();
+					console.log("Captures click on <li>")
+				})
+				.on('click', 'a', function(event) {
+
+					var href = $(this).attr('href');
+
+					event.preventDefault();
+					event.stopPropagation();
+
+					// Hide.
+						$details._hide();
+
+					// Redirect.
+						window.setTimeout(function() {
+							window.location.href = href;
+						}, 250);
+
+				});
+
 			$menuInner
 				.on('click', function(event) {
 					event.stopPropagation();
@@ -311,6 +360,18 @@
 
 				});
 
+			$details
+				.appendTo($body)
+				.on('click', function(event) {
+
+					event.stopPropagation();
+					event.preventDefault();
+
+					$body.removeClass('are-details-visible');
+
+				})
+				.append('<a class="close" href="#details">Close</a>');
+
 			$menu
 				.appendTo($body)
 				.on('click', function(event) {
@@ -323,6 +384,31 @@
 				})
 				.append('<a class="close" href="#menu">Close</a>');
 
+			// Toggle details
+			$body
+				.on('click', 'a[href="#details"]', function(event) {
+					event.stopPropagation();
+					event.preventDefault();
+
+					// Toggle.
+						$details._toggle();
+
+				})
+				.on('click', function(event) {
+
+					// Hide.
+						$details._hide();
+
+				})
+				.on('keydown', function(event) {
+
+					// Hide on escape.
+						if (event.keyCode == 27)
+							$details._hide();
+
+				});
+
+			// Toggle menu
 			$body
 				.on('click', 'a[href="#menu"]', function(event) {
 
