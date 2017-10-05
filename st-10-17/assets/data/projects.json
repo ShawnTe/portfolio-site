@@ -1,0 +1,8 @@
+  {
+    "id": "hm-data" ,
+    "title": "Hungry Monster",
+    "tech": ["Javascript", "KonvaJS", "Webpack" ],
+    "summary": "A Javascript math game built for mobile.",
+    "details": "More info here.",
+    "role": "Sole developer"
+  }

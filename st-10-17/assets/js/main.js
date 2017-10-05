@@ -90,6 +90,7 @@
 
 	};
 
+
 	$(function() {
 
 		var	$window = $(window),
@@ -99,6 +100,60 @@
 			$banner = $('#banner'),
 			$main = $('#main');
 
+
+			// var projectDetails = function (response) {
+		  //   return response.json();
+			// };
+			//
+			// fetch('https://shawntuttle.com/assets/data/projects.json', {
+			//   credentials: 'same-origin'
+			// })
+			// .then(parseJson(response))
+			// .catch(function(err) {
+					// console.log(err)
+			// });
+
+		var projectDetails = [
+	  	{
+		    "id": "hm-data",
+		    "title": "Hungry Monster",
+		    "tech": ["Javascript", "KonvaJS", "Webpack" ],
+		    "summary": "A Javascript math game built for mobile.",
+		    "details": "More info here.",
+		    "role": "Sole developer"
+		  },
+			{
+		    "id": "isleep-data",
+		    "title": "iSleep",
+		    "tech": ["React Native" ],
+		    "summary": "An app for iOS and Android.",
+		    "details": "More info here.",
+		    "role": "Co-developer"
+		  }
+		]
+
+		// console.log(projectDetails)
+
+		// var projectDetails = originalProjectDetails.slice(0);
+		// console.log(projectDetails)
+
+
+
+
+		// function getObjectDetails(projectDetails) {
+			// for(var obj in projectDetails) {
+			// for (var i = 0; i < projectDetails.length; i++){
+				// console.log(obj)
+				// console.log(obj + " " + projectDetails[obj])
+
+			// }
+		// }
+		// getObjectDetails(projectDetails)     // Objects
+		// getObjects(projectDetails)							// Array
+
+
+
+		// console.log(details);
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
 
@@ -144,8 +199,9 @@
 
 				var $this = $(this),
 					$image = $this.find('.image'), $img = $image.find('img'),
-					$link = $this.find('.link'),
+					$link = $this.find('.link'), $id = $this.find('#id').children().context.id,
 					x;
+					// console.log($id)  // got the id!
 
 				// Image.
 
@@ -171,7 +227,6 @@
 						$link = $link.add($x);
 
 					}
-
 			});
 
 		// Header.
@@ -224,58 +279,17 @@
 
 			});
 
+
+
 		// Details.
-			var $details = $('#details'),
-				$detailsInner;    // how is it grabbing this?
-
-			console.log('$details', $details);
-
-			$details.wrapInner('<div class="inner"></div>');
-			$detailsInner = $details.children('.inner');
-			$details._locked = false;
-
-			$details._lock = function() {
-
-				if ($details._locked)
-					return false;
-
-				$details._locked = true;
-
-				window.setTimeout(function() {
-					$details._locked = false;
-				}, 350);
-
-				return true;
-
-			};
-
-			$details._show = function() {
-
-				if ($details._lock())
-					$body.addClass('are-details-visible');
-
-			};
-
-			$details._hide = function() {
-
-				if ($details._lock())
-					$body.removeClass('are-details-visible');
-
-			};
-
-			$details._toggle = function() {
-
-				if ($details._lock())
-					$body.toggleClass('are-details-visible');
-
-			};
+		// getDetails();
 
 
 		// Menu.
 			var $menu = $('#menu'),
 				$menuInner;
 
-			console.log('$menu', $menu);
+			// console.log('$menu around line 279-ish', $menu);
 
 			$menu.wrapInner('<div class="inner"></div>');
 			$menuInner = $menu.children('.inner');
@@ -317,27 +331,8 @@
 
 			};
 
-			$detailsInner
-				.on('click', function(event) {
-					event.stopPropagation();
-					console.log("Captures click on <li>")
-				})
-				.on('click', 'a', function(event) {
+			// This is click on details overlay
 
-					var href = $(this).attr('href');
-
-					event.preventDefault();
-					event.stopPropagation();
-
-					// Hide.
-						$details._hide();
-
-					// Redirect.
-						window.setTimeout(function() {
-							window.location.href = href;
-						}, 250);
-
-				});
 
 			$menuInner
 				.on('click', function(event) {
@@ -360,17 +355,7 @@
 
 				});
 
-			$details
-				.appendTo($body)
-				.on('click', function(event) {
 
-					event.stopPropagation();
-					event.preventDefault();
-
-					$body.removeClass('are-details-visible');
-
-				})
-				.append('<a class="close" href="#details">Close</a>');
 
 			$menu
 				.appendTo($body)
@@ -390,7 +375,20 @@
 					event.stopPropagation();
 					event.preventDefault();
 
+					$('#details').empty();
+
+					var $details = $('#details'),
+				    $detailsInner;    // how is it grabbing this?
+
+				  // console.log('$details', $details);
+
+				  $details.wrapInner('<div class="inner"></div>');
+				  $detailsInner = $details.children('.inner');
+				  $details._locked = false;
 					// Toggle.
+
+					var id = event.target.parentElement.id
+					buildProjectDetails($details, $detailsInner, id);
 						$details._toggle();
 
 				})
@@ -408,6 +406,98 @@
 
 				});
 
+
+
+
+			function buildProjectDetails(details, detailsInner, id) {
+				$details = details
+				$detailsInner = detailsInner
+
+			  var currentProject = {}
+
+				// function getCurrentProject (if id's match)
+				// function createProjectHTML with return of getCurrentProject()
+				// append return of createProjectHTML to $detailsInner
+
+
+
+				function getCurrentProject(projectDetails, id) {
+					function matchID(project) {
+						return project.id === id;
+					}
+					return projectDetails.find(matchID)
+				}
+
+				function createProjectHTML(currentProject) {
+
+					var projectHtml = `
+						<p>Title: ${currentProject.title}</p>
+						<p>Tech: ${currentProject.tech}</p>
+						<p>Summary: ${currentProject.summary}</p>
+						<p>Details: ${currentProject.details}</p>
+						<p>Role: ${currentProject.role}</p>
+					`
+					return projectHtml
+				}
+
+				function getObjects(projectDetails, id) {
+					var currentProject = getCurrentProject(projectDetails, id);
+					var projectHTML = createProjectHTML(currentProject);
+					return projectHTML
+				}
+
+			  projectForOverlay = getObjects(projectDetails, id)
+
+			  $detailsInner.append(projectForOverlay);
+
+			  $details._lock = function() {
+
+			    if ($details._locked)
+			      return false;
+
+			    $details._locked = true;
+
+			    window.setTimeout(function() {
+			      $details._locked = false;
+			    }, 350);
+
+			    return true;
+
+			  };
+
+			  $details._show = function() {
+
+			    if ($details._lock())
+			      $body.addClass('are-details-visible');
+
+			  };
+
+			  $details._hide = function() {
+
+			    if ($details._lock())
+			      $body.removeClass('are-details-visible');
+
+			  };
+
+			  $details._toggle = function() {
+
+			    if ($details._lock())
+			      $body.toggleClass('are-details-visible');
+
+			  };
+
+				$details
+					.appendTo($body)
+					.on('click', function(event) {
+
+						event.stopPropagation();
+						event.preventDefault();
+
+						$body.removeClass('are-details-visible');
+
+					})
+					.append('<a class="close" href="#details">Close</a>');
+}
 			// Toggle menu
 			$body
 				.on('click', 'a[href="#menu"]', function(event) {
@@ -415,6 +505,7 @@
 					event.stopPropagation();
 					event.preventDefault();
 
+					thisIsANewFunction(id)
 					// Toggle.
 						$menu._toggle();
 
