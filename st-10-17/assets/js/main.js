@@ -114,46 +114,68 @@
 			// });
 
 		var projectDetails = [
-	  	{
-		    "id": "hm-data",
-		    "title": "Hungry Monster",
-		    "tech": ["Javascript", "KonvaJS", "Webpack" ],
-		    "summary": "A Javascript math game built for mobile.",
-		    "details": "More info here.",
-		    "role": "Sole developer"
-		  },
-			{
-		    "id": "isleep-data",
-		    "title": "iSleep",
-		    "tech": ["React Native" ],
-		    "summary": "An app for iOS and Android.",
-		    "details": "More info here.",
-		    "role": "Co-developer"
-		  }
-		]
+	    {
+	      "id": "hm-data",
+	      "title": "Hungry Monster",
+	      "tech": ["Javascript", " KonvaJS", " Webpack" ],
+				"summary": "A Javascript touch & drag-based math game.",
+				"details": "Mobile-first app built for my 7 y.o. niece featuring a hungry monster and Boom ShaKaLaKa. Modular JS design pattern.",
+	      "github": "https://github.com/ShawnTe/hungry-monster-basic/",
+	      "url": "http://hungrymonster.fun/",
+	      "role": "Sole developer"
+	    },
+	    {
+	      "id": "me-data",
+	      "title": "Artist Site",
+	      "tech": ["Ruby on Rails", " Cucumber", " Bootstrap", " Paperclip", " Devise", " AWS" ],
+	      "summary": "Mobile-responsive Ruby on Rails artist gallery.",
+	      "details": "Site developed via Behavior Driven Development. I integrated gems and AWS S3 + CloudFront, custom actions; wrote responsive CSS,  BDD user stories + tests, and designed backend to reflect client’s desire for minimalist interface.",
+	      "github": "https://github.com/ericbooker12/fuzzy_hat_artist_site",
+	      "url": "http://www.markeinert.com/",
+	      "role": "Co-developer"
+	    },
+	    {
+	      "id": "isleep-data",
+	      "title": "iSleep",
+	      "tech": ["React Native", " Expo", " React Navigation"],
+	      "summary": "Yoga Nidra (sleep yoga) app built with React Native.",
+	      "details": "Audio player, accordion menus, simple interface are some of the features.",
+	      "github": "https://github.com/FuzzyHatPublishing/isleep",
+	      "url": null,
+	      "role": "Co-developer"
+	    },
+	    {
+	      "id": "phoney-data",
+	      "title": "Phoney.club",
+	      "tech": ["NodeJS", " Twilio", " IBM Watson"],
+	      "summary": "Mobile-first app built at the Tech Crunch Disrupt SF 2016 Hackathon.",
+	      "details": "Voice or touch-activated interface to initiate phone call via Twilio.",
+	      "github": "https://github.com/ShawnTe/server-i-have-to-take-this",
+	      "url": null,
+	      "role": "Conceptualize UX, designate user flow, create written content and frontend Javascript on team of 4"
+	    },
+	    {
+	      "id": "gyft-data",
+	      "title": "Game Gyft",
+	      "tech": ["HTML", " CSS", " Javascript", " VISA & Marqueta APIs"],
+	      "summary": "Web app built at the Money 20/20 2016 Hackathon.",
+	      "details": "Take the guilt out of gyfting a gift card by delivering via interactive game.",
+	      "github": "https://github.com/ShawnTe/gamegyft-v2",
+	      "url": null,
+	      "role": "Product Manager, presentation concept and delivery, frontend Javascript on team of 4"
+	    },
+	    {
+	      "id": "guardian-data",
+	      "title": "Guardian",
+	      "tech": ["Ruby on Rails", " NodeJS", " Twilio API", " Google GeoLocation API", " Parrot AR.Drone 2.0"],
+	      "summary": "Mobile-first app built with two servers.",
+	      "details": "Designed to help you get home safely, UI built with RoR which issued commands to NodeJS server to control drone.",
+	      "github": "https://github.com/ShawnTe/guardian",
+	      "url": null,
+	      "role": "Rails backend, most of the Javascript/Ajax functionality & majority of the CRUD views on team of 4"
+	    }
+	]
 
-		// console.log(projectDetails)
-
-		// var projectDetails = originalProjectDetails.slice(0);
-		// console.log(projectDetails)
-
-
-
-
-		// function getObjectDetails(projectDetails) {
-			// for(var obj in projectDetails) {
-			// for (var i = 0; i < projectDetails.length; i++){
-				// console.log(obj)
-				// console.log(obj + " " + projectDetails[obj])
-
-			// }
-		// }
-		// getObjectDetails(projectDetails)     // Objects
-		// getObjects(projectDetails)							// Array
-
-
-
-		// console.log(details);
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
 
@@ -201,32 +223,29 @@
 					$image = $this.find('.image'), $img = $image.find('img'),
 					$link = $this.find('.link'), $id = $this.find('#id').children().context.id,
 					x;
-					// console.log($id)  // got the id!
 
-				// Image.
+		// Image.
+			// Set image.
+				// $this.css('background-image', 'url("images/blue-monster.jpg")');
+				$this.css('background-image', 'url(' + $img.attr('src') + ')');
 
-					// Set image.
-						// $this.css('background-image', 'url("images/blue-monster.jpg")');
-						$this.css('background-image', 'url(' + $img.attr('src') + ')');
+			// Set position.
+				if (x = $img.data('position'))
+					$image.css('background-position', x);
 
-					// Set position.
-						if (x = $img.data('position'))
-							$image.css('background-position', x);
+			// Hide original.
+				$image.hide();
 
-					// Hide original.
-						$image.hide();
+			// Link.
+				if ($link.length > 0) {
 
-				// Link.
-					if ($link.length > 0) {
+					$x = $link.clone()
+						.text('')
+						.addClass('primary')
+						.appendTo($this);
 
-						$x = $link.clone()
-							.text('')
-							.addClass('primary')
-							.appendTo($this);
-
-						$link = $link.add($x);
-
-					}
+					$link = $link.add($x);
+				}
 			});
 
 		// Header.
@@ -252,9 +271,7 @@
 					window.setTimeout(function() {
 						$window.triggerHandler('scroll');
 					}, 100);
-
 				});
-
 			}
 
 		// Banner.
@@ -274,22 +291,12 @@
 
 						// Hide original.
 							$image.hide();
-
 					}
-
 			});
-
-
-
-		// Details.
-		// getDetails();
-
 
 		// Menu.
 			var $menu = $('#menu'),
 				$menuInner;
-
-			// console.log('$menu around line 279-ish', $menu);
 
 			$menu.wrapInner('<div class="inner"></div>');
 			$menuInner = $menu.children('.inner');
@@ -331,9 +338,6 @@
 
 			};
 
-			// This is click on details overlay
-
-
 			$menuInner
 				.on('click', function(event) {
 					event.stopPropagation();
@@ -354,8 +358,6 @@
 						}, 250);
 
 				});
-
-
 
 			$menu
 				.appendTo($body)
@@ -378,9 +380,7 @@
 					$('#details').empty();
 
 					var $details = $('#details'),
-				    $detailsInner;    // how is it grabbing this?
-
-				  // console.log('$details', $details);
+				    $detailsInner;
 
 				  $details.wrapInner('<div class="inner"></div>');
 				  $detailsInner = $details.children('.inner');
@@ -390,36 +390,24 @@
 					var id = event.target.parentElement.id
 					buildProjectDetails($details, $detailsInner, id);
 						$details._toggle();
-
 				})
 				.on('click', function(event) {
 
 					// Hide.
 						$details._hide();
-
 				})
 				.on('keydown', function(event) {
 
 					// Hide on escape.
 						if (event.keyCode == 27)
 							$details._hide();
-
 				});
-
-
-
 
 			function buildProjectDetails(details, detailsInner, id) {
 				$details = details
 				$detailsInner = detailsInner
 
 			  var currentProject = {}
-
-				// function getCurrentProject (if id's match)
-				// function createProjectHTML with return of getCurrentProject()
-				// append return of createProjectHTML to $detailsInner
-
-
 
 				function getCurrentProject(projectDetails, id) {
 					function matchID(project) {
@@ -462,28 +450,24 @@
 			    }, 350);
 
 			    return true;
-
 			  };
 
 			  $details._show = function() {
 
 			    if ($details._lock())
 			      $body.addClass('are-details-visible');
-
 			  };
 
 			  $details._hide = function() {
 
 			    if ($details._lock())
 			      $body.removeClass('are-details-visible');
-
 			  };
 
 			  $details._toggle = function() {
 
 			    if ($details._lock())
 			      $body.toggleClass('are-details-visible');
-
 			  };
 
 				$details
@@ -497,7 +481,7 @@
 
 					})
 					.append('<a class="close" href="#details">Close</a>');
-}
+			}
 			// Toggle menu
 			$body
 				.on('click', 'a[href="#menu"]', function(event) {
@@ -508,22 +492,18 @@
 					thisIsANewFunction(id)
 					// Toggle.
 						$menu._toggle();
-
 				})
 				.on('click', function(event) {
 
 					// Hide.
 						$menu._hide();
-
 				})
 				.on('keydown', function(event) {
 
 					// Hide on escape.
 						if (event.keyCode == 27)
 							$menu._hide();
-
 				});
-
 	});
 
 })(jQuery);

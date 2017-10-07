@@ -1,8 +1,62 @@
-  {
-    "id": "hm-data" ,
-    "title": "Hungry Monster",
-    "tech": ["Javascript", "KonvaJS", "Webpack" ],
-    "summary": "A Javascript math game built for mobile.",
-    "details": "More info here.",
-    "role": "Sole developer"
-  }
+  [
+    {
+      "id": "hm-data",
+      "title": "Hungry Monster",
+      "tech": ["Javascript", " KonvaJS", " Webpack" ],
+      "summary": "A Javascript touch & drag-based math game.",
+      "details": "Mobile-first app built for my 7 y.o. niece featuring a hungry monster and Boom ShaKaLaKa. Modular JS design pattern.",
+      "github": "https://github.com/ShawnTe/hungry-monster-basic/",
+      "url": "http://hungrymonster.fun/",
+      "role": "Sole developer"
+    },
+    {
+      "id": "me-data",
+      "title": "Artist Site",
+      "tech": ["Ruby on Rails", " Cucumber", " Bootstrap", " Paperclip", " Devise", " AWS" ],
+      "summary": "Mobile-responsive Ruby on Rails artist gallery.",
+      "details": "Site developed via Behavior Driven Development. I integrated gems and AWS S3 + CloudFront, custom actions; wrote responsive CSS,  BDD user stories + tests, and designed backend to reflect client’s desire for minimalist interface.",
+      "github": "https://github.com/ericbooker12/fuzzy_hat_artist_site",
+      "url": "http://www.markeinert.com/",
+      "role": "Co-developer"
+    },
+    {
+      "id": "isleep-data",
+      "title": "iSleep",
+      "tech": ["React Native", " Expo", " React Navigation"],
+      "summary": "Yoga Nidra (sleep yoga) app built with React Native.",
+      "details": "Audio player, accordion menus, simple interface are some of the features.",
+      "github": "https://github.com/FuzzyHatPublishing/isleep",
+      "url": null,
+      "role": "Co-developer"
+    },
+    {
+      "id": "phoney-data",
+      "title": "Phoney.club",
+      "tech": ["NodeJS", " Twilio", " IBM Watson"],
+      "summary": "Mobile-first app built at the Tech Crunch Disrupt SF 2016 Hackathon.",
+      "details": "Voice or touch-activated interface to initiate phone call via Twilio.",
+      "github": "https://github.com/ShawnTe/server-i-have-to-take-this",
+      "url": null,
+      "role": "Conceptualize UX, designate user flow, create written content and frontend Javascript on team of 4"
+    },
+    {
+      "id": "gyft-data",
+      "title": "Game Gyft",
+      "tech": ["HTML", " CSS", " Javascript", " VISA & Marqueta APIs"],
+      "summary": "Web app built at the Money 20/20 2016 Hackathon.",
+      "details": "Take the guilt out of gyfting a gift card by delivering via interactive game.",
+      "github": "https://github.com/ShawnTe/gamegyft-v2",
+      "url": null,
+      "role": "Product Manager, presentation concept and delivery, frontend Javascript on team of 4"
+    },
+    {
+      "id": "guardian-data",
+      "title": "Guardian",
+      "tech": ["Ruby on Rails", " NodeJS", " Twilio API", " Google GeoLocation API", " Parrot AR.Drone 2.0"],
+      "summary": "Mobile-first app built with two servers.",
+      "details": "Designed to help you get home safely, UI built with RoR which issued commands to NodeJS server to control drone.",
+      "github": "https://github.com/ShawnTe/guardian",
+      "url": null,
+      "role": "Rails backend, most of the Javascript/Ajax functionality & majority of the CRUD views on team of 4"
+    }
+]
