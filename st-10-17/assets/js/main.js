@@ -425,9 +425,14 @@
 						<h4>Details</h4><p>${currentProject.details}</p>
 						<h4>Role</h4><p>${currentProject.role}</p>
 						<h4>Github</h4><p>${currentProject.github}</p>
-						<h4>URL</h4><p>${currentProject.url}</p>
 					`
-					return projectHtml
+					var url = function(){
+						if(currentProject.url != null) {
+							return `<h4>URL</h4><p>${currentProject.url}</p>`
+						}
+					}();
+
+					return url ? projectHtml + url : projectHtml
 				}
 
 				function getObjects(projectDetails, id) {
