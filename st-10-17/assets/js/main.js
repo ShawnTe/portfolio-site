@@ -419,11 +419,13 @@
 				function createProjectHTML(currentProject) {
 
 					var projectHtml = `
-						<p>Title: ${currentProject.title}</p>
-						<p>Tech: ${currentProject.tech}</p>
-						<p>Summary: ${currentProject.summary}</p>
-						<p>Details: ${currentProject.details}</p>
-						<p>Role: ${currentProject.role}</p>
+						<h3>${currentProject.title}</h3>
+						<h4>Tech</h4><p>${currentProject.tech}</p>
+						<h4>Summary</h4><p>${currentProject.summary}</p>
+						<h4>Details</h4><p>${currentProject.details}</p>
+						<h4>Role</h4><p>${currentProject.role}</p>
+						<h4>Github</h4><p>${currentProject.github}</p>
+						<h4>URL</h4><p>${currentProject.url}</p>
 					`
 					return projectHtml
 				}
