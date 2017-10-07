@@ -424,7 +424,7 @@
 						var details = `<h4>Details</h4><p>${currentProject.details}</p>`
 						var role = `<h4>Role</h4><p>${currentProject.role}</p>`
 						var links = function(){
-							var links = `<h4>Links</h4><p id="decr-height"><a href="${currentProject.github}">Github</a>`
+							var links = `<h4>Links</h4><p id="extLink"><a href="${currentProject.github}">Github</a>`
 							var close = `</p>`
 							if(currentProject.url != null) {
 								links += `&nbsp;&nbsp;<a href="${currentProject.url}">Online</a>`
@@ -433,9 +433,6 @@
 						}();
 					return [title, tech, summary, details, role, links].filter(val => val).join('')
 				}
-
-
-
 
 				function getObjects(projectDetails, id) {
 					var currentProject = getCurrentProject(projectDetails, id);
@@ -479,6 +476,28 @@
 			      $body.toggleClass('are-details-visible');
 			  };
 
+				$extLink = $("#extLink")
+				$extLink
+				.on('click', function(event) {
+					event.stopPropagation();
+				})
+				.on('click', 'a', function(event) {
+
+					var href = $(this).attr('href');
+
+					event.preventDefault();
+					event.stopPropagation();
+
+					// Hide.
+					$details._hide();
+
+					// Redirect.
+					window.setTimeout(function() {
+						window.location.href = href;
+					}, 100);
+
+				});
+				
 				$details
 					.appendTo($body)
 					.on('click', function(event) {
