@@ -1704,10 +1704,6 @@
 		margin: 0 0 2em 0;
 	}
 
-	#details p {
-		margin: 0 0 1em .5em;
-	}
-
 	h1, h2, h3, h4, h5, h6 {
 		color: #ffffff;
 		font-weight: 600;
@@ -1734,11 +1730,6 @@
 
 	h4 {
 		font-size: 1.1em;
-	}
-
-	#details h4 {
-		font-variant: small-caps;
-		margin: 0;
 	}
 
 	h5 {
@@ -1872,6 +1863,18 @@
 			max-width: 100% !important;
 		}
 
+		#details p {
+			margin: 0 0 .7em .5em;
+		}
+
+		#decr-height {
+			margin-bottom: .3em;
+		}
+
+		#details h4 {
+			font-variant: small-caps;
+			margin: 0;
+		}
 	@media screen and (max-width: 736px) {
 
 		header.major > p br {

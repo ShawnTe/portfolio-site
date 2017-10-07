@@ -418,22 +418,24 @@
 
 				function createProjectHTML(currentProject) {
 
-					var projectHtml = `
-						<h3>${currentProject.title}</h3>
-						<h4>Tech</h4><p>${currentProject.tech}</p>
-						<h4>Summary</h4><p>${currentProject.summary}</p>
-						<h4>Details</h4><p>${currentProject.details}</p>
-						<h4>Role</h4><p>${currentProject.role}</p>
-						<h4>Github</h4><p>${currentProject.github}</p>
-					`
-					var url = function(){
-						if(currentProject.url != null) {
-							return `<h4>URL</h4><p>${currentProject.url}</p>`
-						}
-					}();
-
-					return url ? projectHtml + url : projectHtml
+						var title = `<h3>${currentProject.title}</h3>`
+						var tech = `<h4>Tech</h4><p>${currentProject.tech}</p>`
+						var summary  = `<h4>Summary</h4><p>${currentProject.summary}</p>`
+						var details = `<h4>Details</h4><p>${currentProject.details}</p>`
+						var role = `<h4>Role</h4><p>${currentProject.role}</p>`
+						var links = function(){
+							var links = `<h4>Links</h4><p id="decr-height"><a href="${currentProject.github}">Github</a>`
+							var close = `</p>`
+							if(currentProject.url != null) {
+								links += `&nbsp;&nbsp;<a href="${currentProject.url}">Online</a>`
+							}
+							return links + close
+						}();
+					return [title, tech, summary, details, role, links].filter(val => val).join('')
 				}
+
+
+
 
 				function getObjects(projectDetails, id) {
 					var currentProject = getCurrentProject(projectDetails, id);
