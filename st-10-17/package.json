@@ -1,0 +1,23 @@
+{
+  "name": "shawn-tuttle",
+  "description": "Portfolio site of my work",
+  "license": "Creative Commons",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShawnTe/portfolio-site"
+  },
+  "version": "0.0.1",
+  "scripts": {},
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-notify": "^3.0.0",
+    "gulp-uglify": "git+https://github.com/mishoo/UglifyJS2.git#harmony",
+    "gulp-util": "^3.0.8"
+  }
+}
