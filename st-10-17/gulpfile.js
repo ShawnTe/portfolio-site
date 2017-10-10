@@ -3,8 +3,10 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    gutil = require('gulp-util');
-    babel = require('gulp-babel');
+    gutil = require('gulp-util'),
+    imagemin = require('gulp-imagemin'),
+    cache = require('gulp-cache'),
+    babel = require('gulp-babel'),
     del = require('del');
 
     var paths = {
@@ -43,7 +45,13 @@ var gulp = require('gulp'),
         .pipe(notify({ message: 'Scripts task complete' }));
     });
 
+    gulp.task('images', function() {
+      return gulp.src('images/**/*')
+        .pipe(cache(imagemin({ optimizationLevel: 5, progressive: true, interlaced: true })))
+        .pipe(gulp.dest('dist/images/img'))
+        .pipe(notify({ message: 'Images task complete' }));
+    });
+
     gulp.task('default', ['clean'], function() {
-        // gulp.start('styles', 'scripts', 'images');
-        gulp.start('styles', 'scripts');
+        gulp.start('styles', 'scripts', 'images');
     });
